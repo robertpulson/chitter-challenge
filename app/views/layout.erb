@@ -1,14 +1,40 @@
 <html>
 
   <head>
-    <title>5hitter</title>
+    <title>Like Twitter, but 5hitter!</title>
     <link rel='stylesheet' type='text/css' href='style.css'>
   </head>
 
   <body>
 
-    <h1>5hitter</h1>
-  
+    <header>
+      <span class="spanFormat">
+          <a href='/' id='home' class='button'>Home</a>
+      </span>
+        <% if current_user %>
+          <span class="spanFormat">
+            <form method='post' action='/sessions'>
+              <input type='hidden' name='_method' value='delete'>
+              <input type='submit' value='Sign out' class='button'>
+            </form>
+          </span>
+          <span class="spanFormat">
+            <form method='post' action='/user/profile'>
+              <input type='submit' value='Profile' class='button'>
+            </form>
+          </span>
+    
+        <% else %>
+        <span class="spanFormat">
+            <a href='/users/new' id='sign_up' class='button'>Sign up</a>
+        </span>
+        <span class="spanFormat">
+            <a href='/sessions/new' id='sign_in' class='button'>Sign in</a>
+        </span>
+        <% end %>
+      
+    </header>
+
     <% if flash[:notice] %>
       <div id='notice'>
       <%= flash[:notice] %>
@@ -24,25 +50,9 @@
       </ul>
     <% end %>
   
-    <% if current_user %>
-      Welcome, <%= current_user.username %>
-      <form method='post' action='/sessions'>
-        <input type='hidden' name='_method' value='delete'>
-        <input type='submit' value='Sign out'>
-      </form>
-      <form method='post' action='/sheets/new'>
-        <input type='submit' value='New Sheet'>
-      </form>
-      <form method='post' action='/user/profile'>
-        <input type='submit' value='Profile'>
-      </form>
-
-    <% else %>
-      <a href='/users/new' id='sign_up' class='button'>Sign up</a>
-      <a href='/sessions/new' id='sign_in' class='button'>Sign in</a>
-    <% end %>
-  
     <%= yield %>
+
+    <footer></footer>
     
   </body>
 

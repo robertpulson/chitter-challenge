@@ -71,8 +71,7 @@ post '/sheets/new' do
 end
 
 post '/sheet' do
-   Sheet.create(:text => params[:sheet],
-                :user_id => session[:user_id])
+   current_user.sheets.create(:text => params[:sheet])
    redirect to('/')
 end
 
@@ -84,7 +83,7 @@ end
 helpers do
 
   def current_user
-    @current_user ||=User.get(session[:user_id]) if session[:user_id]   
+    @current_user ||= User.get(session[:user_id]) if session[:user_id]   
   end
 
 end

@@ -1,4 +1,11 @@
-<ul>
+<% if current_user %>
+  <form id='new_sheet' action='/sheet' method='post'>
+    <input id='sheet_input' name='sheet' type='text' maxlength='140'>
+    <input type='submit' value='Send Sheet!' class='button'>
+  </form>
+<% end %>
+
+<ul id='sheets'>
   <% @sheets.reverse.each do |sheet| %>
     <li class='sheet'><%= sheet.text %> <%= sheet.created_at %></li>
   <% end %>

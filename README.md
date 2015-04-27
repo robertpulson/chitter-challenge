@@ -1,50 +1,35 @@
-Chitter Challenge
-=================
+# chitter-challenge
 
-* Challenge time: Friday afternoon (+ weekend if you need it)
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+An exercise using Sinatra to build a twitter clone.
 
-Challenge:
--------
+# Key Learning Areas
 
-As usual please start by 
+* Sinatra
+* PostSQL
+* Relationships
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
+# Progress
 
-We are going to write a little Twitter clone that will allow the users to post messages to a public stream.
+I was able to code a solution which incorporated a lot of the functionality of Twitter. Users can create an account, sign in and out and post tweets. However there are still areas that require some work.
 
-Features:
--------
+# Future enhancements
 
-* In order to use chitter as a maker I want to sign up to the service
-* In order to user chitter as a maker I want to log in
-* In order to avoid others using my account as a maker I want to log out
-* In order to let people know what I am doing as a maker I want to post a message (peep) to chitter
-* In order to see what people have to say as a maker I want to see all peeps in chronological order
+* Work on css/html
+* Add likes and comments
+* Add user area, with profile, etc.
 
-Notes:
-------
+# ScreenShots
 
-* Makers sign up to chitter with their email, password, name and a user name (e.g. sam@makersacademy.com, s3cr3t, Samuel Russell Hampden Joseph, tansaku).
-* The username and email are unique.
-* Peeps (posts to chitter) have the name of the maker and their user handle.
-* Use bcrypt to secure the passwords.
-* Use data mapper and postgres to save the data.
-* You don't have to be logged in to see the peeps.
-* You only can peep if you are logged in.
-* Finally submit a pull request before Monday at 9am with your solution or partial solution.  However much or little amount of code you wrote please please please submit a pull request before Monday at 9am
+![ScreenShot](https://github.com/robertpulson/chitter-challenge/blob/master/screenshots/Screen%20Shot%202015-04-27%20at%2015.19.45.png?raw=true)
 
-Bonus:
------
+# Getting Started
 
-If you have time you can implement the following:
+Clone this repo with `git clone https://github.com/robertpulson/chitter-challenge.git`
 
-* In order to start a conversation as a maker I want to reply to a peep from another maker.
+Then `cd chitter-challenge`, to navigate into it.
 
-And/Or:
+`bundle install` will install all the required gems.
 
-* Work on the css to make it look good (we all like beautiful things).
+You can then use `rackup` and paste `localhost:9292` into your browser to try the site out.
 
-Good luck and let the chitter begin!
+I think; therefore I am...
